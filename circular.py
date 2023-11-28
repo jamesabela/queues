@@ -2,7 +2,6 @@ front_of_queue_pointer = 0
 end_of_queue_pointer = -1
 queue = ["","","","","","",""] # pretending to be a fixed sized queue
 animals = ["tiger", "zebra", "koala", "rhinoceros", "flamingo", "hippopotamus", "python", "eagle", "shark", "sloth"]
-#This is a list for quickly adding items to your list
 
 def print_queue():
     """
@@ -62,7 +61,10 @@ def dequeue():
     else:
         item_from_queue = queue[front_of_queue_pointer]
         queue[front_of_queue_pointer] =""
-        front_of_queue_pointer+=1
+        if front_of_queue_pointer == 6:
+            front_of_queue_pointer =0
+        else:
+            front_of_queue_pointer+=1
         return item_from_queue
 
 print("Welcome to your very own queue")
